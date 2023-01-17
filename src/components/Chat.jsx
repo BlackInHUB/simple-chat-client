@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import {useLocation, useNavigate} from 'react-router-dom';
 import io from 'socket.io-client';
 import EmojiPicker from 'emoji-picker-react'
@@ -62,7 +61,7 @@ const Chat = () => {
     return (
         <div className={styles.wrap}>
             <div className={styles.header}>
-                <div className={styles.title}>{params.room}</div>
+                <div className={styles.title}>Room: {params.room}</div>
                 <div className={styles.users}>{roomUsers} users in this room</div>
                 <button 
                 type="button" 
@@ -76,13 +75,14 @@ const Chat = () => {
             </div>
             <form className={styles.form} onSubmit={handleSubmit} >
                 <div className={styles.input}>
-                    <input 
+                    <input
                         type="text" 
                         name="name" 
                         value={message} 
                         placeholder="Write your message"
                         onChange={handleChange} 
                         autoComplete="off"
+                        autoFocus
                         required
                     />
                 </div>

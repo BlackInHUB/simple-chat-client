@@ -29,6 +29,7 @@
   }
   
   .user .text {
+    border-top-left-radius: 0;
     background: #514c4c;
   }
   
@@ -41,7 +42,8 @@
   }
   
   .me .text {
-    background: #0d49d7;
+    border-top-right-radius: 0;
+    background: #3d72ee;
   }
   
   .me .user {
